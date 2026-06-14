@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <cmath>
 
 using namespace std;
 
@@ -54,6 +55,11 @@ public:
     Vector2<T> operator*(const Vector2<T>& v) {
         return Vector2<T>(x_ * v.x_, y_ * v.y_);
     }
+
+    T length() {
+
+        return sqrt(x_ * x_ + y_ * y_);
+    }
 };
 
 template <typename T>
@@ -96,6 +102,8 @@ int main()
 
     std::cout << v3.x_ << "," << v3.y_ << std::endl;
     std::cout << v4.x_ << "," << v4.y_ << std::endl;
+
+    std::cout << "Length: " << v2.length() << std::endl;
 
     std::cout << v3;
 }
