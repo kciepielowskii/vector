@@ -56,6 +56,10 @@ public:
         return Vector2<T>(x_ * v.x_, y_ * v.y_);
     }
 
+   bool operator==(const Vector2<T>& v) {
+        return x_ == v.x_ && y_ == v.y_;
+    }
+
     T length() {
 
         return sqrt(x_ * x_ + y_ * y_);
@@ -84,18 +88,22 @@ istream& operator>>(istream& is, Vector2<T>& v) {
 
 int main()
 {
-    Vector2<int> v5(0, 0);
-    cin >> v5;
+    // Vector2<int> v5(0, 0);
+    // cin >> v5;
+    //
+    // Vector2<int> v6(0, 0);
+    // cin >> v6;
+    //
+    // cout << v5 + v6 << endl;
 
-    Vector2<int> v6(0, 0);
-    cin >> v6;
 
-    cout << v5 + v6 << endl;
 
-    Vector2<int> v1(0,0);
-    Vector2<int> v2(5,11);
+    Vector2<int> v1(5,11);
+    Vector2<int> v2(5,10);
     Vector2<int> v3 = v1 + v2;
     Vector2<int> v4 = v1 * v2;
+
+    cout << "Czy rowne: " << (v1 == v2) << '\n';
 
     std::cout << v1 + v2 << std::endl;
     std::cout << v1 - v2 << std::endl;
