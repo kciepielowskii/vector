@@ -39,6 +39,13 @@ public:
         return Vector2<T>(x_ * v.x_, y_ * v.y_);
     }
 
+    ////normalize() — wektor jednostkowy (dzielisz przez length())
+
+    Vector2<T> normalize() {
+        T len = length();
+        return Vector2<T>((x_ / len), (y_ / len));
+    }
+
    bool operator==(const Vector2<T>& v) {
         return x_ == v.x_ && y_ == v.y_;
     }
