@@ -4,23 +4,6 @@
 
 using namespace std;
 
-// int add(int i1, int i2) {
-//     return i1 + i2;
-// }
-//
-// int add(double d1, double d2) {
-//     return d1 + d2;
-// }
-
-// int add(string s1, string s2) {
-//     return s1 + s2;
-// }
-
-template <typename T>
-T add(T arg1, T arg2) {
-    return arg1 + arg2;
-}
-
 template <typename T>
 class Vector2 {
 public:
