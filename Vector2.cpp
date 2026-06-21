@@ -64,6 +64,10 @@ public:
 
         return sqrt(x_ * x_ + y_ * y_);
     }
+
+    bool operator!= (const Vector2<T> &v) {
+        return !(x_ == v.x_ && y_ == v.y_);
+    }
 };
 
 template <typename T>
@@ -88,6 +92,10 @@ istream& operator>>(istream& is, Vector2<T>& v) {
 
 int main()
 {
+    double a = 0.1 + 0.2;
+    double b = 0.3;
+
+    cout << (a == b) << endl;
     // Vector2<int> v5(0, 0);
     // cin >> v5;
     //
@@ -108,10 +116,13 @@ int main()
     std::cout << v1 + v2 << std::endl;
     std::cout << v1 - v2 << std::endl;
 
+
     std::cout << v3.x_ << "," << v3.y_ << std::endl;
     std::cout << v4.x_ << "," << v4.y_ << std::endl;
 
     std::cout << "Length: " << v2.length() << std::endl;
 
-    std::cout << v3;
+    std::cout << v3 << std::endl;
+
+    std::cout << "Czy sprzeczne: " << (v1 != v2) << '\n';
 }
