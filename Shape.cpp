@@ -8,6 +8,7 @@ using namespace std;
 class Shape {
 public:
     virtual double area() = 0;
+    virtual double perimeter() = 0;
 };
 
 class Rectangle : public Shape {
@@ -20,6 +21,10 @@ public:
     double area() override {
         return a * b;
     }
+
+    double perimeter() override {
+        return (2 * a) + (2 * b);
+    }
 };
 
 class Circle : public Shape {
@@ -29,6 +34,10 @@ public:
     Circle(double radius) : radius(radius) {}
 
     double area() override {
+        return M_PI * radius * radius;
+    }
+
+    double perimeter() override {
         return 2 * M_PI * radius;
     }
 };
@@ -42,6 +51,10 @@ public:
     double area() override {
         double x = (a + b + c) / 2;
         return sqrt(x * (x - a) * (x - b) * (x - c));
+    }
+
+    double perimeter() override {
+        return a + b + c;
     }
 };
 
